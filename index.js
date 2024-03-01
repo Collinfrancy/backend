@@ -13,3 +13,12 @@ app.use(routes);
 app.listen(4444, () => {
   console.log('App is running @ http://localhost:4444');
 });
+
+// git
+
+// git add .
+// git commit -m "INDEX CHANGED"
+// git push origin dev
+// git checkout main
+// git pull origin main
+// .
