@@ -1,0 +1,27 @@
+import { Schema, model } from 'mongoose';
+
+const Schemaa = Schema(
+  {
+    doctor: {
+      type: Schema.Types.ObjectId,
+      ref: 'Doctor',
+    },
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: 'User',
+    },
+    message: String,
+    medicines: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Medicine',
+      },
+    ],
+  },
+  {
+    timestamps: true,
+  }
+);
+
+const Prescription = model('Prescription', Schemaa);
+export default Prescription;
