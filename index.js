@@ -2,7 +2,6 @@ import express from 'express';
 import cors from 'cors';
 import mongoose from './db/dbConnection.js';
 import routes from './routes/index.js';
-import Department from './db/models/departmentSchema.js';
 
 const app = express();
 app.use(express.json());
@@ -21,4 +20,4 @@ app.listen(4444, () => {
 // git push origin dev
 // git checkout main
 // git pull origin main
-// .
+// ..
