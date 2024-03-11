@@ -1,5 +1,6 @@
 import express from 'express';
 import Prescription from '../../db/models/prescriptionSChema.js';
+
 const router = express.Router();
 
 //crud and by id
@@ -35,7 +36,7 @@ router.get('/:id', async (req, res) => {
 router.patch('/:id', async (req, res) => {
   const { id } = req.params;
   try {
-    const Prescriptions = await Prescription.updateById(id);
+    const Prescriptions = await Prescription.findByIdAndUpdate(id);
     res
       .status(200)
       .json({ message: 'Prescription updated', Prescription: Prescriptions });
@@ -46,7 +47,7 @@ router.patch('/:id', async (req, res) => {
 router.delete('/:id', async (req, res) => {
   const { id } = req.params;
   try {
-    const Prescriptions = await Prescription.DeleteById(id);
+    const Prescriptions = await Prescription.findByIdAndDelete(id);
     res
       .status(200)
       .json({ message: 'Prescription deleted', Prescription: Prescriptions });
